@@ -4,7 +4,7 @@ services:
     image: 'docker.io/naveenverma088/bookmakers_dockerized-client'
     environment:
       - WDS_SOCKET_PORT=0
-      - REACT_APP_API_URL=http://35.225.46.108/bookmakers/api
+      - REACT_APP_API_URL=http://35.225.46.108:3000/api
     ports:
       - 3001:80
 
