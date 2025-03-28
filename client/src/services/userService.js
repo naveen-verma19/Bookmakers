@@ -1,6 +1,7 @@
 import http from "./httpService";
-import { apiUrl } from "../config.json";
 import moment from "moment";
+
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export function getAllReaders() {
   return http.get(apiUrl + "/users/readers");

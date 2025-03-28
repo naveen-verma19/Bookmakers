@@ -1,6 +1,7 @@
 import http from "./httpService";
-import { apiUrl } from "../config.json";
 import { getBookByGenre } from "./bookService";
+
+const apiUrl = process.env.REACT_APP_API_URL;
 
 let apiEndpoint = apiUrl + "/bookstores";
 

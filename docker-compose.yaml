@@ -2,12 +2,17 @@ services:
   client:
     container_name: client
     image: 'docker.io/naveenverma088/bookmakers_dockerized-client'
+    environment:
+      - WDS_SOCKET_PORT=0
+      - REACT_APP_API_URL=http://35.225.46.108:3000/api
 
   api:
     container_name: api
     image: 'docker.io/naveenverma088/bookmakers_dockerized-api'
     depends_on:
       - mongo
+    ports:
+      - 3000:3000
 
   mongo:
     image: 'mongo'
