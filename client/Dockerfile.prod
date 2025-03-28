@@ -1,0 +1,20 @@
+# Step 1: Build React App
+FROM node:alpine AS builder
+
+WORKDIR /app
+
+# Copy package.json and install dependencies
+COPY package.json ./
+#instead of --production
+RUN npm install --omit-dev
+
+# Copy the rest of the app and build it
+COPY . .
+RUN npm run build
+
+# Step 2: Serve with Nginx
+FROM nginx
+
+# Copy built React app to Nginx's default serving directory
+COPY --from=builder /app/build /usr/share/nginx/html
+# nginx default listens on port 80, so no need to expose a port
