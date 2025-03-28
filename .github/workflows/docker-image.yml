@@ -21,7 +21,7 @@ jobs:
       - name: Build and push client image
         run: |
           cd client
-          docker build . --file Dockerfile --tag naveenverma088/bookmakers_dockerized-client:latest
+          docker build . --file Dockerfile.prod --tag naveenverma088/bookmakers_dockerized-client:latest
           docker push naveenverma088/bookmakers_dockerized-client:latest
       
       - name: Build and push API image
