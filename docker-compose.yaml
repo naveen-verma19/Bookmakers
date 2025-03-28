@@ -5,6 +5,8 @@ services:
     environment:
       - WDS_SOCKET_PORT=0
       - REACT_APP_API_URL=http://35.225.46.108:3000/api
+    ports:
+      - 3001:3001
 
   api:
     container_name: api
@@ -33,7 +35,7 @@ services:
       - api
       - client
     ports:
-      - "80:80"
+      - 3050:3050"
 
 volumes:
   mongodb_data:

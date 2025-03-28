@@ -43,6 +43,6 @@ services:
       - api
       - client
     ports:
-      - "3050:80"
+      - "3050:3050"
 volumes:
   mongodb_data:
